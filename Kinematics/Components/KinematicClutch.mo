@@ -3,6 +3,7 @@ model KinematicClutch "A kinematic clutch model"
   extends Modelica.Mechanics.Rotational.Interfaces.PartialTwoFlanges;
   Modelica.Blocks.Interfaces.BooleanInput command annotation(Placement(visible=true, transformation(origin={-195.3463,59.8666}, extent={{-20.0,-20.0},{20.0,20.0}}, rotation=0), iconTransformation(origin={0.0,110.0}, extent={{-20.0,-20.0},{20.0,20.0}}, rotation=-90)));
   parameter Modelica.SIunits.Time shift_time(min=Modelica.Constants.eps);
+  parameter Boolean start_engaged=true;
 public
   Modelica.SIunits.AngularVelocity w_rel=der(flange_a.phi) - der(flange_b.phi);
   Modelica.SIunits.AngularAcceleration a_rel=der(w_rel);
@@ -12,14 +13,12 @@ public
   Modelica.SIunits.Torque tau_hold;
   Modelica.SIunits.Time start_time;
 initial equation
-  free = not command;
   start_time= -Modelica.Constants.inf;
-  if command then
-    w_rel = 0;
-  else
-    tau_hold = 0;
-  end if;
   flange_a.phi = flange_b.phi;
+  free = not start_engaged;
+  if start_engaged then
+    w_rel = 0;
+  end if;
 equation
   flange_a.tau + flange_b.tau=0 "Conservation of angular momentum";
   if free then

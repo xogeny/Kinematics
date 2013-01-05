@@ -6,7 +6,8 @@ partial model PartialTransmission
     annotation (Placement(transformation(extent={{-10,-110},{10,-90}})));
   Modelica.Mechanics.Rotational.Interfaces.Flange_b output_shaft "Output shaft"
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
-  Components.KinematicClutch kinematicClutch(shift_time=engagement_time)
+  Components.KinematicClutch kinematicClutch(shift_time=engagement_time,
+      start_engaged=start_engaged)
     annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
   Modelica.Mechanics.Rotational.Interfaces.Flange_a input_shaft "Input shaft"
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
@@ -17,6 +18,7 @@ protected
     annotation (choicesAllMatching=true, Placement(transformation(extent={{-10,-10},{10,10}})));
 public
   parameter Modelica.SIunits.Time engagement_time;
+  parameter Boolean start_engaged=true;
 equation
   connect(partialGear.support, support) annotation (Line(
       points={{0,-10},{0,-100}},
