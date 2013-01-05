@@ -5,7 +5,7 @@ partial model TransmissionTest "A base class to test transmissions"
       useSupport=true)
     annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
   replaceable Interfaces.PartialTransmission transmission constrainedby
-    Interfaces.PartialTransmission
+    Interfaces.PartialTransmission(start_engaged=false)
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Modelica.Mechanics.Rotational.Components.Fixed fixed
     annotation (Placement(transformation(extent={{-10,-46},{10,-26}})));
@@ -22,6 +22,7 @@ partial model TransmissionTest "A base class to test transmissions"
         origin={50,-26})));
 initial equation
   dyno.flange.phi = 0;
+
 equation
   connect(dyno.flange, transmission.input_shaft) annotation (Line(
       points={{-30,0},{-10,0}},
