@@ -9,7 +9,9 @@ partial model TransmissionTest "A base class to test transmissions"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Modelica.Mechanics.Rotational.Components.Fixed fixed
     annotation (Placement(transformation(extent={{-10,-46},{10,-26}})));
-  Modelica.Mechanics.Rotational.Components.Inertia load(J=2.0)
+  Modelica.Mechanics.Rotational.Components.Inertia load(J=2.0,
+    phi(start=0, fixed=true),
+    w(start=0, fixed=true))
     annotation (Placement(transformation(extent={{40,-10},{60,10}})));
   Modelica.Blocks.Sources.BooleanPulse engage(period=2, startTime=0.5)
     annotation (Placement(transformation(extent={{-80,20},{-60,40}})));
@@ -18,6 +20,8 @@ partial model TransmissionTest "A base class to test transmissions"
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={50,-26})));
+initial equation
+  dyno.flange.phi = 0;
 equation
   connect(dyno.flange, transmission.input_shaft) annotation (Line(
       points={{-30,0},{-10,0}},

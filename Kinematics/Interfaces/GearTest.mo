@@ -12,13 +12,16 @@ partial model GearTest "A base class to test gears"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Modelica.Mechanics.Rotational.Components.Fixed fixed
     annotation (Placement(transformation(extent={{-10,-46},{10,-26}})));
-  Modelica.Mechanics.Rotational.Components.Inertia load(J=2.0)
+  Modelica.Mechanics.Rotational.Components.Inertia load(J=2.0, phi(fixed=true,
+        start=0))
     annotation (Placement(transformation(extent={{40,-10},{60,10}})));
   Modelica.Mechanics.Rotational.Components.Damper damper(d=1) annotation (
       Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={50,-26})));
+initial equation
+  dyno.flange.phi = 0;
 equation
   connect(dyno.flange, gear.flange_a) annotation (Line(
       points={{-30,0},{-10,0}},

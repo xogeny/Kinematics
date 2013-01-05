@@ -11,6 +11,15 @@ public
   Modelica.SIunits.AngularAcceleration a_close;
   Modelica.SIunits.Torque tau_hold;
   Modelica.SIunits.Time start_time;
+initial equation
+  free = not command;
+  start_time= -Modelica.Constants.inf;
+  if command then
+    w_rel = 0;
+  else
+    tau_hold = 0;
+  end if;
+  flange_a.phi = flange_b.phi;
 equation
   flange_a.tau + flange_b.tau=0 "Conservation of angular momentum";
   if free then
@@ -19,18 +28,13 @@ equation
     a_rel=if time - start_time <= shift_time then a_close else 0;
   end if;
 algorithm
-  when initial() then
-        free:=true;
-    start_time:=-Modelica.Constants.inf;
-    tau_hold:=0;
-  end when;
   when command and free then
-        free:=false;
+    free:=false;
     a_close:=-pre(w_rel)/shift_time;
     start_time:=pre(time);
   end when;
   when not free and not command then
-        free:=true;
+    free:=true;
     tau_hold:=pre(tau);
     start_time:=pre(time);
   end when;

@@ -1,0 +1,7 @@
+*.txt
+*.mat
+*.bak-mo
+dsmodel.c
+*.exe
+*.exp
+*.lib
