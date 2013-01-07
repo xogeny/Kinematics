@@ -14,21 +14,21 @@ partial model PartialTransmission
   Modelica.Blocks.Interfaces.BooleanInput engage
     annotation (Placement(transformation(extent={{-140,20},{-100,60}})));
 protected
-  replaceable PartialGear partialGear(final useSupport=true)
+  replaceable PartialGear gear(final useSupport=true)
     annotation (choicesAllMatching=true, Placement(transformation(extent={{-10,-10},{10,10}})));
 public
   parameter Modelica.SIunits.Time engagement_time;
   parameter Boolean start_engaged=true;
 equation
-  connect(partialGear.support, support) annotation (Line(
+  connect(gear.support, support)        annotation (Line(
       points={{0,-10},{0,-100}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(partialGear.flange_b, output_shaft) annotation (Line(
+  connect(gear.flange_b, output_shaft)        annotation (Line(
       points={{10,0},{100,0}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(kinematicClutch.flange_b, partialGear.flange_a) annotation (Line(
+  connect(kinematicClutch.flange_b, gear.flange_a)        annotation (Line(
       points={{-50,0},{-10,0}},
       color={0,0,0},
       smooth=Smooth.None));

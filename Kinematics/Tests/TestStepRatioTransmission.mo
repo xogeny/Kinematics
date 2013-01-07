@@ -13,8 +13,8 @@ model TestStepRatioTransmission "Test the step ratio transmission"
   AssertValueAt engaged_load_speed2(at=2.0,expected=50.0,actual=load.w,eps=1e-3);
   AssertValueAt engaged_load_speed4(at=4.0,expected=25.0,actual=load.w,eps=1e-3);
 equation
-  connect(transmission.gear, gear_selection.y) annotation (Line(
-      points={{0,12},{0,70},{-19,70}},
+  connect(gear_selection.y, transmission.gear_cmd) annotation (Line(
+      points={{-19,70},{0,70},{0,12}},
       color={255,127,0},
       smooth=Smooth.None));
   annotation (Diagram(graphics),
