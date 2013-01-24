@@ -4,3 +4,5 @@ TestCVT_Gear
 TestSmoothCVT_Gear
 TestCVT_Transmission
 TestStepRatioTransmission
+TestCrankSlider_TimeDerivative
+TestCrankSlider

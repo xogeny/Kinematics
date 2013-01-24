@@ -4,3 +4,7 @@ SingleGear2
 CVT_Gear
 SmoothCVT_Gear
 StepRatio_Gear
+CrankSlider_TimeDerivative
+CrankSlider
+IdealGear_TimeDerivative
+IdealGear
