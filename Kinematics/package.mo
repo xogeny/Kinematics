@@ -2,5 +2,11 @@ within ;
 package Kinematics 
 
 
-annotation (uses(XogenyTest(version="1.0"),Modelica(version="3.2")));
+
+
+
+
+annotation (uses(Modelica(version="3.1"),
+                 XogenyTest(version="1.1")),
+            version="1.1");
 end Kinematics;

@@ -2,6 +2,11 @@ within Kinematics.Components;
 model IdealGear "Robust ideal gear model"
   parameter Real R "Gear ratio";
   extends Modelica.Mechanics.Rotational.Interfaces.PartialTwoFlanges;
+protected
+  Real da_db = R;
+equation
+  flange_a.phi = R*flange_b.phi;
+  flange_a.tau*da_db + flange_b.tau = 0 "Conservation of energy";
   annotation (Icon(graphics={
         Rectangle(
           extent={{-100,10},{-40,-10}},
@@ -44,9 +49,4 @@ model IdealGear "Robust ideal gear model"
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           textString="%name")}));
-protected
-  Real da_db = R;
-equation
-  flange_a.phi = R*flange_b.phi;
-  flange_a.tau*da_db + flange_b.tau = 0 "Conservation of energy";
 end IdealGear;

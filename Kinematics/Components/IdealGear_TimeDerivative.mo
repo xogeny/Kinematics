@@ -3,6 +3,10 @@ model IdealGear_TimeDerivative
   "Ideal gear model using a time derivative formulation"
   parameter Real R "Gear ratio";
   extends Modelica.Mechanics.Rotational.Interfaces.PartialTwoFlanges;
+equation
+  flange_a.phi = R*flange_b.phi;
+  flange_a.tau*der(flange_a.phi) + flange_b.tau*der(flange_b.phi) = 0
+    "Conservation of energy";
   annotation (Icon(graphics={
         Rectangle(
           extent={{-100,10},{-40,-10}},
@@ -45,8 +49,4 @@ model IdealGear_TimeDerivative
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           textString="%name")}));
-equation
-  flange_a.phi = R*flange_b.phi;
-  flange_a.tau*der(flange_a.phi) + flange_b.tau*der(flange_b.phi) = 0
-    "Conservation of energy";
 end IdealGear_TimeDerivative;
