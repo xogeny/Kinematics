@@ -12,8 +12,7 @@ equation
       points={{-31,40},{0,40},{0,12}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Diagram(graphics),
-    Documentation(info="<html>
+  annotation (    Documentation(info="<html>
 <p>This model does not (in general) work. This is because index reduction necessitates differentiation of the kinematic constraint and the gear ratio <tt>R</tt> is not smooth. The correct way to implement the CVT gear is as shown in the <a href=\"modelica://Kinematics.Components.SmoothCVT_Gear\"><tt>SmoothCVT_Gear</tt></a> model.</p>
 <p>
 Additional discussion about this model can be found in the Xogeny Blog post title <a href=\"http://blog.xogeny.com/blog/kinematic-transmissions/\">\"Kinematic Transmissions\"</a>.

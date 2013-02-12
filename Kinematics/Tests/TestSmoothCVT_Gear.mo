@@ -5,6 +5,5 @@ model TestSmoothCVT_Gear "Same step change test but with smoothing"
   AssertFinal final_load_speed(expected=25.0,actual=load.w);
   AssertInitial initial_dyno_speed(expected=100.0,actual=dyno.w);
   AssertFinal final_dyno_speed(expected=100.0,actual=dyno.w);
-  annotation (experiment(StopTime=5, Tolerance=1e-006),
-      __Dymola_experimentSetupOutput);
+  annotation (experiment(StopTime=5, Tolerance=1e-006));
 end TestSmoothCVT_Gear;

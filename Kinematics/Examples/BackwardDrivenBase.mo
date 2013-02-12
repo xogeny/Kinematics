@@ -78,5 +78,4 @@ equation
       points={{71,70},{80,70},{80,90},{-80,90},{-80,-40},{-62,-40}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end BackwardDrivenBase;

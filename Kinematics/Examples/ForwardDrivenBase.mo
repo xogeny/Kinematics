@@ -59,5 +59,4 @@ equation
       points={{-19,30},{16,30},{16,4},{28,4}},
       color={255,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end ForwardDrivenBase;

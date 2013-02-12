@@ -40,5 +40,4 @@ equation
       points={{-60,11},{-60,40},{-120,40}},
       color={255,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end PartialTransmission;
