@@ -15,7 +15,6 @@ equation
   ds_dphi = (crank_radius^2*sin(crank.phi)*cos(crank.phi))/(sqrt(rod_length^2-crank_radius^2*sin(crank.phi)^2))-crank_radius*sin(crank.phi);
   slider.f*ds_dphi + crank.tau = 0;
   annotation (
-    Diagram(graphics),
     Icon(graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},

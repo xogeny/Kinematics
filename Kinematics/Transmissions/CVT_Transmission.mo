@@ -13,5 +13,4 @@ equation
       points={{0,12},{0,120}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end CVT_Transmission;

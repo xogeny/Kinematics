@@ -47,5 +47,4 @@ equation
       points={{40,-26},{0,-26},{0,-36},{0,-36}},
       color={0,0,0},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end GearTest;

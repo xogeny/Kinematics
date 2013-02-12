@@ -1,5 +1,5 @@
 within Kinematics;
-package Tests 
+package Tests
 import XogenyTest.*;
 
 end Tests;
