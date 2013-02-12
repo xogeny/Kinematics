@@ -15,5 +15,4 @@ equation
       points={{0,12},{0,120}},
       color={255,127,0},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end StepRatioTransmission;

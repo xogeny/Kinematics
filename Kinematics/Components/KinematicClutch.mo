@@ -44,5 +44,5 @@ algorithm
             fillPattern=                                                                                                    FillPattern.HorizontalCylinder, extent={{-30.0,-60.0},{-10.0,60.0}}),Rectangle(visible=true, fillColor={192,192,192},
             fillPattern=                                                                                                    FillPattern.HorizontalCylinder, extent={{30.0,-10.0},{100.0,10.0}}),Rectangle(visible=true, fillColor={192,192,192},
             fillPattern=                                                                                                    FillPattern.HorizontalCylinder, extent={{-100.0,-10.0},{-30.0,10.0}}),Text(visible=true, lineColor={0,0,255}, extent={{-150.0,-110.0},{150.0,-70.0}}, textString=
-                                                                                                    "%name", fontName="Arial")}), Diagram(coordinateSystem(extent={{-148.5,-105.0},{148.5,105.0}}, preserveAspectRatio=true, initialScale=0.1, grid={5,5})));
+                                                                                                    "%name", fontName="Arial")}));
 end KinematicClutch;

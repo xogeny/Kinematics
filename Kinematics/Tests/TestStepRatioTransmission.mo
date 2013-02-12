@@ -17,7 +17,5 @@ equation
       points={{-19,70},{0,70},{0,12}},
       color={255,127,0},
       smooth=Smooth.None));
-  annotation (Diagram(graphics),
-    experiment(StopTime=30, Tolerance=1e-006),
-    __Dymola_experimentSetupOutput);
+  annotation (experiment(StopTime=30, Tolerance=1e-006));
 end TestStepRatioTransmission;

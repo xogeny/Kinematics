@@ -29,5 +29,4 @@ equation
       points={{-19,60},{2.20436e-015,60},{2.20436e-015,42}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end TestCrankSlider_TimeDerivative;

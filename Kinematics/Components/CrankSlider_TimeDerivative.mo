@@ -18,7 +18,6 @@ equation
     v = (crank_radius^2*sin(crank.phi)*cos(crank.phi)*omega)/(sqrt(rod_length^2-crank_radius^2*sin(crank.phi)^2))-crank_radius*sin(crank.phi)*omega;
     slider.f*v + crank.tau*omega = 0;
   annotation (
-    Diagram(graphics),
     Icon(graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},

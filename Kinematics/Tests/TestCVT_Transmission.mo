@@ -17,7 +17,5 @@ equation
       points={{-19,60},{0,60},{0,12}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Diagram(graphics),
-    experiment(StopTime=30, Tolerance=1e-006),
-    __Dymola_experimentSetupOutput);
+  annotation (experiment(StopTime=30, Tolerance=1e-006));
 end TestCVT_Transmission;
