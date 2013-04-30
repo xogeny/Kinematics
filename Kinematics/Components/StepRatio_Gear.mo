@@ -3,7 +3,7 @@ model StepRatio_Gear "A step ratio gear model"
   extends Modelica.Mechanics.Rotational.Icons.Gear;
   extends Kinematics.Interfaces.PartialGear;
   parameter Modelica.SIunits.Time shift_time "Time to shift gears";
-  parameter Real ratios[:] "Discrete gear ratios";
+  parameter Real ratios[:]={1} "Discrete gear ratios";
   Modelica.Blocks.Interfaces.IntegerInput gear "Desired gear" annotation (
       Placement(transformation(
         extent={{-20,-20},{20,20}},
